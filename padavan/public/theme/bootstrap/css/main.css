@@ -1,0 +1,682 @@
+body{
+	background-color: #282828;
+    overflow-y: scroll;
+}
+body.body_iframe{
+    background: #F5F5F5;
+    margin: 5px 10px 15px 15px;
+    min-width: inherit;
+    overflow-y: auto;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#logo {
+    background-image: url("/bootstrap/img/asus_logo.png");
+    width: 150px;
+    height: 71px;
+    margin-top: 40px;
+}
+#logo:hover {
+    cursor: pointer;
+}
+
+div#TopBanner a[href="/Advanced_FirmwareUpgrade_Content.asp"],
+#cpu_info, #mem_info, .adv_info {
+    text-decoration: none;
+    border-bottom: 1px dotted #005580;
+}
+div#TopBanner a[href="/Advanced_FirmwareUpgrade_Content.asp"],
+#cpu_info:hover, #mem_info:hover, .adv_info:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#subFooter,
+#footer{color: #0089E1}
+
+.form_thin{margin-bottom: 0px}
+
+.round_all {
+    border-radius: 3px 3px 3px 3px;
+}
+.round_top {
+    border-radius: 3px 3px 0 0;
+}
+.round_bottom {
+    border-radius: 0 0 3px 3px;
+}
+.round_left {
+    border-radius: 3px 0 0 3px;
+}
+.round_right {
+    border-radius: 0 3px 3px 0;
+}
+
+.popup_bg {
+    position:absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    z-index:99;
+    visibility:hidden;
+    overflow:hidden;
+    background: url("../img/loading_bg.png") repeat scroll 50% 50% #AAAAAA;
+    opacity: 0.95;
+}
+
+.popup_bar_bg {
+    position:absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    z-index:99;
+    visibility:hidden;
+    overflow:hidden;
+}
+
+.loadingBlock {
+    font-size:20px;
+    color:#FFFFFF;
+    opacity: 1;
+}
+
+.side_nav ul {
+    list-style: none outside none;
+    margin: 0;
+}
+.side_nav ul ul li, .side_nav ul ul ul {
+    list-style: none outside none;
+    margin: 0;
+    width: 160px;
+}
+.side_nav ul li {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.side_nav > ul > li ul, .side_nav > ul > li ul ul, .side_nav > ul > li ul ul ul {
+    display: none;
+    left: 100%;
+    margin-top: 1px;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+}
+.side_nav > ul > li > ul {
+    margin-top: 0;
+}
+.side_nav > ul > li > ul > li:first-child > ul {
+    margin-top: -1px;
+}
+.side_nav ul li ul li ul {
+    margin-top: 0;
+}
+.side_nav ul ul.slide_left, .side_nav ul ul ul.slide_left, .side_nav ul ul ul ul.slide_left {
+    left: auto;
+    right: 100%;
+    top: 0;
+}
+.side_nav ul a {
+    display: block;
+    font: bold 12px/30px sans-serif;
+    padding: 0 10px;
+    text-decoration: none;
+    /*white-space: nowrap;*/
+}
+.side_nav ul a img {
+    margin: 5px 5px -12px -3px;
+    position: relative;
+    top: -2px;
+}
+.side_nav ul ul {
+    z-index: 3;
+}
+.side_nav ul ul ul {
+    z-index: 4;
+}
+.side_nav ul ul ul ul {
+    z-index: 5;
+}
+.side_nav ul ul ul ul ul {
+    z-index: 6;
+}
+.side_nav ul ul ul ul ul ul {
+    z-index: 7;
+}
+.side_nav ul ul ul ul ul ul ul {
+    z-index: 7;
+}
+.side_nav ul li:hover ul ul, .side_nav ul li:hover ul ul ul, .side_nav ul li:hover ul ul ul ul, .side_nav ul li.iehover ul ul, .side_nav ul li.iehover ul ul ul, .side_nav ul li.iehover ul ul ul ul {
+    display: none;
+}
+.side_nav ul li:hover ul, .side_nav ul ul li:hover ul, .side_nav ul ul ul li:hover ul, .side_nav ul ul ul ul li:hover ul, .side_nav ul li.iehover ul, .side_nav ul ul li.iehover ul, .side_nav ul ul ul li.iehover ul, .side_nav ul ul ul ul li.iehover ul {
+    display: block;
+}
+.side_nav ul li:first-child > a {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.side_nav ul li:last-child > a {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.side_nav div.accordion {
+    margin-bottom: 0;
+}
+.side_nav ul a img {
+    margin: 5px 5px -12px -3px;
+    position: relative;
+    top: -6px;
+}
+
+ul#icons li {
+    cursor: pointer;
+    float: left;
+    list-style: none outside none;
+    margin: 2px;
+    padding: 4px 0;
+    position: relative;
+}
+ul#icons span.ui-icon {
+    float: left;
+    margin: 0 4px;
+}
+.bar_nav ul, .side_nav ul {
+    background-color: transparent;
+    border-radius: 5px 5px 5px 5px;
+}
+.bar_nav ul ul, .side_nav ul ul {
+    border: 1px solid #666666;
+}
+.bar_nav ul li a, .side_nav ul li a {
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+.bar_nav ul li:hover > a, .side_nav ul li:hover > a {
+    color: #FFFFFF;
+    text-shadow: none;
+}
+.bar_nav > ul > li > a {
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #FFFFFF;
+    border-top: 1px solid #DDDDDD;
+}
+.bar_nav > ul > li.send_right > a {
+    border-left: 1px solid #FFFFFF;
+    border-right: medium none;
+}
+.bar_nav > ul > li.send_right:hover > a {
+    border-right: medium none;
+}
+.bar_nav > ul > li:hover > a {
+    border-color: transparent #666666 #888B90;
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+}
+.bar_nav > ul > li:first-child > a {
+    border-left: medium none;
+}
+.bar_nav > ul > li:last-child > a {
+    border-right: medium none;
+}
+.bar_nav ul li a, .side_nav ul li a {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #FFFFFF;
+}
+.bar_nav ul li.active:last-child > a, .side_nav ul li.active:last-child > a {
+    border-radius: 0 0 0 0;
+}
+li:last-child > div.accordion > a:last-child {
+    border-bottom: medium none;
+}
+.bar_nav ul li ul li:last-child > a:hover, .side_nav ul li ul li:last-child > a:hover {
+    border-bottom: 1px solid #888B90;
+}
+.bar_nav ul li ul li:first-child > a, .side_nav ul li ul li:first-child > a {
+    border-top: 0 solid transparent;
+}
+.bar_nav ul li ul li:first-child:hover > a, .side_nav ul li ul li:first-child:hover > a {
+    border-top: 0 solid #999999;
+}
+.bar_nav ul ul li:hover > a, .side_nav ul li:hover > a {
+    border-bottom: 1px solid #888B90;
+    border-top: 1px solid #888888;
+    cursor: pointer;
+}
+.bar_nav > ul > li > ul li:first-child > a, .side_nav > ul li:first-child > a {
+}
+.bar_nav ul li:last-child ul a {
+    margin-bottom: 0;
+}
+
+.clearfix li.active a {
+    border-radius: 0 0 0 0;
+    cursor: default;
+}
+
+.clearfix li.active > a {
+    border-bottom: 1px solid #0089E1;
+    border-top: 1px solid #0089E1;
+    color: #FFFFFF;
+    text-shadow: none !important;
+}
+
+.clearfix li div.accordion {
+    border-top: 0 solid #FFFFFF;
+    color: #0089E1;
+}
+
+.clearfix li div.accordion a:hover {
+    font-weight: bold;
+}
+
+li div.accordion a {
+    background: none repeat scroll 0 0 #F5F5F5;
+    padding-left: 13%;
+    font-weight: normal;
+}
+
+.grad_grey, .bar_nav ul a, .side_nav ul a, .bar_nav ul, .side_nav ul, .drop_box {
+    background: #ffffff; /* old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #ededed 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ededed)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 ); /* ie */
+    background: -o-linear-gradient(top, #ffffff 0%, #ededed 99%);
+    background: linear-gradient(top, #ffffff 0%, #ededed 99%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #ededed 99%);
+}
+.grad_grey_reverse, .bar_nav ul li:hover > a, .side_nav ul li:hover > a, .side_nav ul li.active > a {
+    background: #ddd; /* old browsers */
+    background: -moz-linear-gradient(top, #0089E1 0%, #0089E1 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0089E1), color-stop(100%, #0089E1)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089E1', endColorstr='#0089E1', GradientType=0 ); /* ie */
+    background: -o-linear-gradient(top, #0089E1 0%, #0089E1 100%);
+    background: linear-gradient(top, #0089E1 0%, #0089E1 100%);
+    background: -ms-linear-gradient(top, #0089E1 0%, #0089E1 100%);
+}
+
+.box {
+    height: auto;
+    margin-bottom: 20px;
+    padding: 0;
+    position: relative;
+}
+
+.box h2.box_head {
+    font-size: 14px;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    text-indent: 10px;
+}
+
+.box.grad_colour_dark_blue h2.box_head {
+    background-color: #0089E1;
+    background-image: -moz-linear-gradient(top, #0089E1, #0089E1);
+    background-image: -ms-linear-gradient(top, #0089E1, #0089E1);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0089E1), to(#0089E1));
+    background-image: -webkit-linear-gradient(top, #0089E1, #0089E1);
+    background-image: -o-linear-gradient(top, #0089E1, #0089E1);
+    background-image: linear-gradient(top, #0089E1, #0089E1);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0089E1', endColorstr='#0089E1', GradientType=0);
+    border-color: #0089E1 #0089E1 #0089E1;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color:#ffffff;
+    margin-bottom: 1px;
+}
+
+.big-icons{ background: url("../img/icons/big-icons.png") no-repeat top left;}
+.big-icons-globe{ background-position: 0 0; width: 48px; height: 48px; }
+.big-icons-laptop{ background-position: 0 -114px; width: 48px; height: 48px; }
+.big-icons-router{ background-position: 0 -228px; width: 48px; height: 48px; }
+.big-icons-usb{ background-position: 0 -342px; width: 48px; height: 48px; }
+.big-icons-usbhdd{ background-position: 0 -456px; width: 48px; height: 48px; }
+.big-icons-printer{ background-position: 0 -570px; width: 48px; height: 48px; }
+.big-icons-modem{ background-position: 0 -684px; width: 48px; height: 48px; }
+.big-icons-hub{ background-position: 0 -798px; width: 48px; height: 48px; }
+.big-icons-mmc{ background-position: 0 -912px; width: 48px; height: 48px; }
+
+.big-icons-globe-active{ background-position: 0 -57px; width: 48px; height: 48px; }
+.big-icons-laptop-active{ background-position: 0 -171px; width: 48px; height: 48px; }
+.big-icons-router-active{ background-position: 0 -285px; width: 48px; height: 48px; }
+.big-icons-usb-active{ background-position: 0 -399px; width: 48px; height: 48px; }
+.big-icons-usbhdd-active{ background-position: 0 -513px; width: 48px; height: 48px; }
+.big-icons-printer-active{ background-position: 0 -627px; width: 48px; height: 48px; }
+.big-icons-modem-active{ background-position: 0 -741px; width: 48px; height: 48px; }
+.big-icons-hub-active{ background-position: 0 -855px; width: 48px; height: 48px; }
+.big-icons-mmc-active{ background-position: 0 -969px; width: 48px; height: 48px; }
+
+.padding-top-20{ padding-top: 20px;}
+
+#navigation-1 {
+    padding:1px 0;
+    margin:0px;
+    list-style:none;
+    width:50px;
+    height:13px;
+    font:normal 8pt verdana;
+}
+#navigation-1 li {
+    margin:0;
+    padding:0;
+    display:block;
+    float:left;
+    position:relative;
+    left:50px;
+    width:13px;
+}
+#navigation-1 li a:link, #navigation-1 li a:visited {
+    padding:4px 0;
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    color:#FFFFFF;
+    width:13px;
+    height:13px;
+}
+#navigation-1 li:hover a, #navigation-1 li a:hover, #navigation-1 li a:active {
+    padding:4px 0;
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    font-size:10px;
+    color:#FFFFFF;
+    width:60px;
+    height:13px;
+    border:1px solid #B7E1F7;
+}
+#navigation-1 li ul.navigation-2 {
+    margin:0;
+    padding:1px 1px 0;
+    list-style:none;
+    display:none;
+    width:60px;
+    position:absolute;
+    top:-112px;
+    left:-46px;
+}
+#navigation-1 li:hover ul.navigation-2 {
+    display:block;
+}
+#navigation-1 li ul.navigation-2 li {
+    width:60px;
+    clear:left;
+}
+#navigation-1 li ul.navigation-2 li a:link, #navigation-1 li ul.navigation-2 li a:visited {
+    clear:left;
+    color:#FFFFFF;
+    background:#FFFFFF;
+    padding:4px 0;
+    width:60px;
+    border:1px solid #B7E1F7;
+    position:relative;
+    z-index:1000;
+}
+#navigation-1 li ul.navigation-2 li:hover a, #navigation-1 li ul.navigation-2 li a:active, #navigation-1 li ul.navigation-2 li a:hover {
+    clear:left;
+    background:#FFFFFF;
+    padding:4px 0;
+    width:60px;
+    border:2px solid #B7E1F7;
+    position:relative;
+    z-index:1000;
+}
+
+a.help_tooltip {border-bottom: 1px dotted grey; color: #333;}
+a.help_tooltip:hover {text-decoration: none; border-bottom: 1px dotted grey; color: #333;}
+
+#accountMask{
+    z-index:10;
+    position: absolute;
+    margin-left:-1px;
+    width: 34%;
+    height: 548px;
+    background-color:#ccc;
+    background: url("../img/loading_bg.png") repeat scroll 50% 50% #ccc;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+    opacity: .6;
+    -moz-opacity: 0.6;
+}
+
+.FileStatus{
+    width:180px;
+    height:16px;
+    line-height:16px;
+    overflow:hidden;
+    float:right;
+}
+
+.machineName{
+    background:url(../../../bootstrap/img/wl_device/3.gif);
+    background-repeat:no-repeat;
+    background-position: left;
+    /*margin-left:2px;*/
+    padding-left:23px;
+    padding-top:3px;
+}
+
+.folderClicked{
+    background-color:#ccc;
+    cursor:text;
+}
+
+.accountName{
+    background:url(../../../images/AiDisk/user_icon0.gif) #F5F5F5;
+    background-repeat:no-repeat;
+    background-position:left;
+    padding-left:20px;
+    cursor:pointer;
+    overflow:hidden;
+}
+
+textarea[readonly] {
+    cursor: default;
+}
+
+.aidisk_table {
+    background: #F5F5F5;
+    margin: 0 5px 0 5px;
+    width: 370px;
+}
+
+.table th, .table td{vertical-align: middle;}
+.table input, .table select{margin-bottom: 0px;}
+
+.syslog_panel {
+    position: absolute;
+    padding: 20px;
+    width: 960px;
+    background: #f5f5f5;
+    font-family: Georgia;
+    opacity: 0;
+    z-index: 90;
+
+    border: 1px solid #ccc;
+    -webkit-border-radius: 4px 4px 0px 4px;
+    -moz-border-radius: 4px 4px 0px 4px;
+    border-radius: 4px 4px 0px 4px;
+}
+
+.syslog_panel div.log_text {
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#syslog_panel_button {
+    display: inline-block;
+    *display: inline;
+    margin-bottom: 0;
+    *margin-left: .3em;
+    color: #333333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    *background-color: #e6e6e6;
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border: 1px solid #cccccc;
+    *border: 0;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+    *zoom: 1;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+
+    padding: 2px 6px;
+    font-size: 11px;
+    line-height: 14px;
+}
+#syslog_panel_button:hover {
+    color: #333333;
+    text-decoration: none;
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9;
+    background-image: -ms-linear-gradient(top, #e6e6e6, #ffffff);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#ffffff));
+    background-image: -webkit-linear-gradient(top, #e6e6e6, #ffffff);
+    background-image: -o-linear-gradient(top, #e6e6e6, #ffffff);
+    background-image: linear-gradient(top, #e6e6e6, #ffffff);
+    background-image: -moz-linear-gradient(top, #e6e6e6, #ffffff);
+}
+
+#log_area {
+    font-family: 'Courier New', Courier, mono; font-size:13px;
+}
+
+#system_time_log_area {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btn-chevron {
+    border-radius: 0px 4px 4px 0px;
+}
+
+.ddown-list {
+    width: 330px;
+    margin-top: 28px;
+    position:absolute;
+    text-align:left;
+    height:auto;
+    overflow-y:auto;
+    z-index:1000;
+    padding:1px;
+    display:none;
+}
+
+.ddown-list div {
+    height:20px;
+    line-height:20px;
+    text-decoration:none;
+    padding-left:2px;
+}
+
+.ddown-list a {
+    color:#000;
+    font-size:12px;
+    text-decoration:none;
+}
+
+.ddown-list div:hover, .share-list a:hover {
+    cursor:default;
+    color: #005580;
+}
+
+.input-append {
+    margin-bottom: 0px;
+}
+
+.input-append input {
+    border-radius: 3px 0 0 3px;
+}
+
+/* OVERRIDE STYLES */
+
+/* add missing icons */
+.big-ss{ width: 48px !important; height: 48px !important; background: url("../img/icons/big-icons.png") no-repeat 0 -1025px !important; }
+.big-ss-active{ width: 48px !important; height: 48px !important; background: url("../img/icons/big-icons.png") no-repeat 0 -1082px !important; }
+.big-icons-ata{ background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2019.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%22-236%20327%20139%20139%22%20style%3D%22enable-background%3Anew%20-236%20327%20139%20139%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0D%0A%09.st0%7Bfill%3A%23909090%3B%7D%0D%0A%09.st1%7Bfill%3Anone%3Bstroke%3A%23000000%3Bstroke-width%3A3%3Bstroke-miterlimit%3A10%3B%7D%0D%0A%09.st2%7Bfill%3A%23FFFFFF%3B%7D%0D%0A%09.st3%7Benable-background%3Anew%20%20%20%20%3B%7D%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%22%D0%A1%D0%BB%D0%BE%D0%B9_0_xA0_%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_1_%22%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cpath%20class%3D%22st0%22%20d%3D%22M-166.5%2C462.8c-36.6%2C0-66.3-29.7-66.3-66.3s29.7-66.3%2C66.3-66.3s66.3%2C29.7%2C66.3%2C66.3S-129.9%2C462.8-166.5%2C462.8z%0D%0A%09%20M-166.5%2C333.2c-34.9%2C0-63.3%2C28.4-63.3%2C63.3c0%2C34.9%2C28.4%2C63.3%2C63.3%2C63.3c34.9%2C0%2C63.3-28.4%2C63.3-63.3%0D%0A%09C-103.2%2C361.6-131.6%2C333.2-166.5%2C333.2z%22%2F%3E%0D%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M-157.7%2C436.5%22%2F%3E%0D%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M-157.7%2C436.5%22%2F%3E%0D%0A%3Cpath%20class%3D%22st2%22%20d%3D%22M-210.8%2C435.3%22%2F%3E%0D%0A%3Cg%20class%3D%22st3%22%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-198.5%2C385.1c0%2C1.6-0.8%2C2.9-2.3%2C3.9c-1.5%2C1-3.6%2C1.5-6.2%2C1.5c-1.5%2C0-2.8-0.2-4.1-0.5s-2.3-0.6-3.1-1v-3.3h0.2%0D%0A%09%09c1.1%2C0.7%2C2.2%2C1.2%2C3.5%2C1.7c1.3%2C0.4%2C2.5%2C0.6%2C3.7%2C0.6c1.5%2C0%2C2.6-0.2%2C3.5-0.6c0.8-0.4%2C1.3-1.1%2C1.3-2c0-0.7-0.2-1.2-0.7-1.6%0D%0A%09%09c-0.5-0.4-1.3-0.7-2.6-0.9c-0.5-0.1-1.1-0.2-1.9-0.3c-0.8-0.1-1.5-0.3-2.1-0.4c-1.8-0.4-3-1-3.7-1.8c-0.7-0.8-1.1-1.7-1.1-2.9%0D%0A%09%09c0-0.7%2C0.2-1.4%2C0.5-2c0.3-0.6%2C0.9-1.2%2C1.5-1.7c0.7-0.5%2C1.5-0.9%2C2.5-1.2c1-0.3%2C2.2-0.4%2C3.5-0.4c1.2%2C0%2C2.4%2C0.1%2C3.6%2C0.4%0D%0A%09%09c1.2%2C0.3%2C2.2%2C0.6%2C3.1%2C0.9v3.1h-0.2c-0.9-0.6-1.9-1-3.1-1.4s-2.4-0.6-3.6-0.6c-1.2%2C0-2.3%2C0.2-3.1%2C0.6s-1.3%2C1-1.3%2C1.8%0D%0A%09%09c0%2C0.7%2C0.3%2C1.3%2C0.8%2C1.6c0.5%2C0.4%2C1.3%2C0.7%2C2.4%2C0.9c0.6%2C0.1%2C1.3%2C0.2%2C2.1%2C0.4c0.8%2C0.1%2C1.4%2C0.2%2C1.9%2C0.3c1.6%2C0.3%2C2.8%2C0.8%2C3.6%2C1.6%0D%0A%09%09C-198.9%2C382.9-198.5%2C383.9-198.5%2C385.1z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-177%2C381.8h-14.7c0%2C1.1%2C0.2%2C2%2C0.6%2C2.8c0.4%2C0.8%2C0.9%2C1.4%2C1.5%2C2c0.6%2C0.5%2C1.4%2C0.9%2C2.2%2C1.1%0D%0A%09%09c0.9%2C0.2%2C1.8%2C0.4%2C2.8%2C0.4c1.4%2C0%2C2.7-0.2%2C4.1-0.7s2.4-0.9%2C2.9-1.4h0.2v3.2c-1.1%2C0.4-2.3%2C0.8-3.5%2C1c-1.2%2C0.3-2.4%2C0.4-3.7%2C0.4%0D%0A%09%09c-3.3%2C0-5.9-0.8-7.8-2.3c-1.9-1.6-2.8-3.8-2.8-6.7c0-2.8%2C0.9-5.1%2C2.7-6.8c1.8-1.7%2C4.1-2.5%2C7-2.5c2.7%2C0%2C4.8%2C0.7%2C6.2%2C2.1%0D%0A%09%09c1.5%2C1.4%2C2.2%2C3.3%2C2.2%2C5.8V381.8z%20M-180.3%2C379.5c0-1.5-0.5-2.7-1.3-3.6c-0.9-0.8-2.2-1.3-4-1.3c-1.8%2C0-3.2%2C0.5-4.3%2C1.4%0D%0A%09%09c-1.1%2C0.9-1.7%2C2.1-1.8%2C3.4H-180.3z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-159.4%2C376h-0.2c-0.5-0.1-1-0.2-1.5-0.2c-0.5%2C0-1-0.1-1.7-0.1c-1%2C0-2%2C0.2-3%2C0.6c-1%2C0.4-1.9%2C0.9-2.8%2C1.5v12.4%0D%0A%09%09h-3.4v-17.4h3.4v2.6c1.3-0.9%2C2.5-1.6%2C3.5-2c1-0.4%2C2.1-0.6%2C3.1-0.6c0.6%2C0%2C1%2C0%2C1.3%2C0c0.3%2C0%2C0.7%2C0.1%2C1.2%2C0.1V376z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-152.6%2C369.9h-3.8v-3h3.8V369.9z%20M-152.8%2C390.2h-3.4v-17.4h3.4V390.2z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-130.7%2C390.2h-3.3v-1.9c-0.3%2C0.2-0.7%2C0.4-1.2%2C0.7c-0.5%2C0.3-1%2C0.6-1.5%2C0.8c-0.6%2C0.2-1.2%2C0.4-1.9%2C0.6%0D%0A%09%09s-1.6%2C0.2-2.6%2C0.2c-1.8%2C0-3.3-0.5-4.6-1.6c-1.3-1-1.9-2.4-1.9-4c0-1.3%2C0.3-2.4%2C1-3.2c0.7-0.8%2C1.6-1.5%2C2.8-1.9%0D%0A%09%09c1.2-0.5%2C2.7-0.8%2C4.4-1c1.7-0.2%2C3.5-0.3%2C5.5-0.4v-0.5c0-0.7-0.1-1.2-0.4-1.7c-0.3-0.4-0.7-0.8-1.2-1c-0.5-0.2-1-0.4-1.7-0.5%0D%0A%09%09s-1.4-0.1-2.1-0.1c-0.9%2C0-1.9%2C0.1-3%2C0.3c-1.1%2C0.2-2.2%2C0.5-3.4%2C0.9h-0.2v-3c0.7-0.2%2C1.6-0.3%2C2.8-0.5s2.5-0.3%2C3.7-0.3%0D%0A%09%09c1.4%2C0%2C2.6%2C0.1%2C3.7%2C0.3c1%2C0.2%2C1.9%2C0.5%2C2.7%2C1c0.8%2C0.5%2C1.3%2C1.1%2C1.7%2C1.9s0.6%2C1.7%2C0.6%2C2.8V390.2z%20M-134%2C385.9V381%0D%0A%09%09c-1%2C0.1-2.2%2C0.1-3.6%2C0.2c-1.4%2C0.1-2.5%2C0.3-3.3%2C0.5c-1%2C0.2-1.7%2C0.6-2.3%2C1.1c-0.6%2C0.5-0.9%2C1.2-0.9%2C2.1c0%2C1%2C0.3%2C1.7%2C1%2C2.3%0D%0A%09%09c0.7%2C0.5%2C1.7%2C0.8%2C3.2%2C0.8c1.2%2C0%2C2.3-0.2%2C3.2-0.6S-134.8%2C386.4-134%2C385.9z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-120.8%2C390.2h-3.4v-24.2h3.4V390.2z%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20class%3D%22st3%22%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-180.6%2C422.3h-8l-2.1-5.3h-11.1l-2.1%2C5.3h-7.8l11.1-26.1h8.9L-180.6%2C422.3z%20M-192.5%2C412.2l-3.7-9.3l-3.7%2C9.3%0D%0A%09%09H-192.5z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-152.9%2C401.2h-9.4v21h-7.7v-21h-9.4v-5h26.4V401.2z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st0%22%20d%3D%22M-120.5%2C422.3h-8l-2.1-5.3h-11.1l-2.1%2C5.3h-7.8l11.1-26.1h8.9L-120.5%2C422.3z%20M-132.4%2C412.2l-3.7-9.3l-3.7%2C9.3%0D%0A%09%09H-132.4z%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E%0D%0A") no-repeat top left; width: 48px; height: 48px; }
+.big-icons-ata-active{ background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2019.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%22-236%20327%20139%20139%22%20style%3D%22enable-background%3Anew%20-236%20327%20139%20139%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0D%0A%09.st0%7Bfill%3A%23909090%3B%7D%0D%0A%09.st1%7Bfill%3Anone%3Bstroke%3A%23000000%3Bstroke-width%3A3%3Bstroke-miterlimit%3A10%3B%7D%0D%0A%09.st2%7Bfill%3A%23FFFFFF%3B%7D%0D%0A%09.st3%7Benable-background%3Anew%20%20%20%20%3B%7D%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%22%D0%A1%D0%BB%D0%BE%D0%B9_0_xA0_%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_1_%22%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cpath%20class%3D%22st0%22%20d%3D%22M-166.5%2C462.8c-36.6%2C0-66.3-29.7-66.3-66.3s29.7-66.3%2C66.3-66.3s66.3%2C29.7%2C66.3%2C66.3S-129.9%2C462.8-166.5%2C462.8z%0D%0A%09%22%2F%3E%0D%0A%3Cpath%20class%3D%22st0%22%20d%3D%22M-166.5%2C333.2c-34.9%2C0-63.3%2C28.4-63.3%2C63.3c0%2C34.9%2C28.4%2C63.3%2C63.3%2C63.3c34.9%2C0%2C63.3-28.4%2C63.3-63.3%0D%0A%09C-103.2%2C361.6-131.6%2C333.2-166.5%2C333.2z%22%2F%3E%0D%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M-157.7%2C436.5%22%2F%3E%0D%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M-157.7%2C436.5%22%2F%3E%0D%0A%3Cpath%20class%3D%22st2%22%20d%3D%22M-210.8%2C435.3%22%2F%3E%0D%0A%3Cg%20class%3D%22st3%22%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-198.5%2C385.1c0%2C1.6-0.8%2C2.9-2.3%2C3.9c-1.5%2C1-3.6%2C1.5-6.2%2C1.5c-1.5%2C0-2.8-0.2-4.1-0.5s-2.3-0.6-3.1-1v-3.3h0.2%0D%0A%09%09c1.1%2C0.7%2C2.2%2C1.2%2C3.5%2C1.7c1.3%2C0.4%2C2.5%2C0.6%2C3.7%2C0.6c1.5%2C0%2C2.6-0.2%2C3.5-0.6c0.8-0.4%2C1.3-1.1%2C1.3-2c0-0.7-0.2-1.2-0.7-1.6%0D%0A%09%09c-0.5-0.4-1.3-0.7-2.6-0.9c-0.5-0.1-1.1-0.2-1.9-0.3c-0.8-0.1-1.5-0.3-2.1-0.4c-1.8-0.4-3-1-3.7-1.8c-0.7-0.8-1.1-1.7-1.1-2.9%0D%0A%09%09c0-0.7%2C0.2-1.4%2C0.5-2c0.3-0.6%2C0.9-1.2%2C1.5-1.7c0.7-0.5%2C1.5-0.9%2C2.5-1.2c1-0.3%2C2.2-0.4%2C3.5-0.4c1.2%2C0%2C2.4%2C0.1%2C3.6%2C0.4%0D%0A%09%09c1.2%2C0.3%2C2.2%2C0.6%2C3.1%2C0.9v3.1h-0.2c-0.9-0.6-1.9-1-3.1-1.4s-2.4-0.6-3.6-0.6c-1.2%2C0-2.3%2C0.2-3.1%2C0.6s-1.3%2C1-1.3%2C1.8%0D%0A%09%09c0%2C0.7%2C0.3%2C1.3%2C0.8%2C1.6c0.5%2C0.4%2C1.3%2C0.7%2C2.4%2C0.9c0.6%2C0.1%2C1.3%2C0.2%2C2.1%2C0.4c0.8%2C0.1%2C1.4%2C0.2%2C1.9%2C0.3c1.6%2C0.3%2C2.8%2C0.8%2C3.6%2C1.6%0D%0A%09%09C-198.9%2C382.9-198.5%2C383.9-198.5%2C385.1z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-177%2C381.8h-14.7c0%2C1.1%2C0.2%2C2%2C0.6%2C2.8c0.4%2C0.8%2C0.9%2C1.4%2C1.5%2C2c0.6%2C0.5%2C1.4%2C0.9%2C2.2%2C1.1%0D%0A%09%09c0.9%2C0.2%2C1.8%2C0.4%2C2.8%2C0.4c1.4%2C0%2C2.7-0.2%2C4.1-0.7s2.4-0.9%2C2.9-1.4h0.2v3.2c-1.1%2C0.4-2.3%2C0.8-3.5%2C1c-1.2%2C0.3-2.4%2C0.4-3.7%2C0.4%0D%0A%09%09c-3.3%2C0-5.9-0.8-7.8-2.3c-1.9-1.6-2.8-3.8-2.8-6.7c0-2.8%2C0.9-5.1%2C2.7-6.8c1.8-1.7%2C4.1-2.5%2C7-2.5c2.7%2C0%2C4.8%2C0.7%2C6.2%2C2.1%0D%0A%09%09c1.5%2C1.4%2C2.2%2C3.3%2C2.2%2C5.8V381.8z%20M-180.3%2C379.5c0-1.5-0.5-2.7-1.3-3.6c-0.9-0.8-2.2-1.3-4-1.3c-1.8%2C0-3.2%2C0.5-4.3%2C1.4%0D%0A%09%09c-1.1%2C0.9-1.7%2C2.1-1.8%2C3.4H-180.3z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-159.4%2C376h-0.2c-0.5-0.1-1-0.2-1.5-0.2c-0.5%2C0-1-0.1-1.7-0.1c-1%2C0-2%2C0.2-3%2C0.6c-1%2C0.4-1.9%2C0.9-2.8%2C1.5v12.4%0D%0A%09%09h-3.4v-17.4h3.4v2.6c1.3-0.9%2C2.5-1.6%2C3.5-2c1-0.4%2C2.1-0.6%2C3.1-0.6c0.6%2C0%2C1%2C0%2C1.3%2C0c0.3%2C0%2C0.7%2C0.1%2C1.2%2C0.1V376z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-152.6%2C369.9h-3.8v-3h3.8V369.9z%20M-152.8%2C390.2h-3.4v-17.4h3.4V390.2z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-130.7%2C390.2h-3.3v-1.9c-0.3%2C0.2-0.7%2C0.4-1.2%2C0.7c-0.5%2C0.3-1%2C0.6-1.5%2C0.8c-0.6%2C0.2-1.2%2C0.4-1.9%2C0.6%0D%0A%09%09s-1.6%2C0.2-2.6%2C0.2c-1.8%2C0-3.3-0.5-4.6-1.6c-1.3-1-1.9-2.4-1.9-4c0-1.3%2C0.3-2.4%2C1-3.2c0.7-0.8%2C1.6-1.5%2C2.8-1.9%0D%0A%09%09c1.2-0.5%2C2.7-0.8%2C4.4-1c1.7-0.2%2C3.5-0.3%2C5.5-0.4v-0.5c0-0.7-0.1-1.2-0.4-1.7c-0.3-0.4-0.7-0.8-1.2-1c-0.5-0.2-1-0.4-1.7-0.5%0D%0A%09%09s-1.4-0.1-2.1-0.1c-0.9%2C0-1.9%2C0.1-3%2C0.3c-1.1%2C0.2-2.2%2C0.5-3.4%2C0.9h-0.2v-3c0.7-0.2%2C1.6-0.3%2C2.8-0.5s2.5-0.3%2C3.7-0.3%0D%0A%09%09c1.4%2C0%2C2.6%2C0.1%2C3.7%2C0.3c1%2C0.2%2C1.9%2C0.5%2C2.7%2C1c0.8%2C0.5%2C1.3%2C1.1%2C1.7%2C1.9s0.6%2C1.7%2C0.6%2C2.8V390.2z%20M-134%2C385.9V381%0D%0A%09%09c-1%2C0.1-2.2%2C0.1-3.6%2C0.2c-1.4%2C0.1-2.5%2C0.3-3.3%2C0.5c-1%2C0.2-1.7%2C0.6-2.3%2C1.1c-0.6%2C0.5-0.9%2C1.2-0.9%2C2.1c0%2C1%2C0.3%2C1.7%2C1%2C2.3%0D%0A%09%09c0.7%2C0.5%2C1.7%2C0.8%2C3.2%2C0.8c1.2%2C0%2C2.3-0.2%2C3.2-0.6S-134.8%2C386.4-134%2C385.9z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-120.8%2C390.2h-3.4v-24.2h3.4V390.2z%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20class%3D%22st3%22%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-180.6%2C422.3h-8l-2.1-5.3h-11.1l-2.1%2C5.3h-7.8l11.1-26.1h8.9L-180.6%2C422.3z%20M-192.5%2C412.2l-3.7-9.3l-3.7%2C9.3%0D%0A%09%09H-192.5z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-152.9%2C401.2h-9.4v21h-7.7v-21h-9.4v-5h26.4V401.2z%22%2F%3E%0D%0A%09%3Cpath%20class%3D%22st2%22%20d%3D%22M-120.5%2C422.3h-8l-2.1-5.3h-11.1l-2.1%2C5.3h-7.8l11.1-26.1h8.9L-120.5%2C422.3z%20M-132.4%2C412.2l-3.7-9.3l-3.7%2C9.3%0D%0A%09%09H-132.4z%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E%0D%0A") no-repeat top left; width: 48px; height: 48px; }
+
+body.default {
+    background: url("../img/bg/white_blue.jpg") repeat scroll center top transparent;
+}
+
+/* set newtwork status icon as green */
+td#wan_status>span.label.label-success {
+    background-color: #468847
+}
+
+/* center progress bar when showLoading(num) called */
+#loadingBlock {
+    margin-top: 400px !important;
+}
+
+/* proper crop for toggle buttons */
+div.main_itoggle label.itoggle {
+    width: 60px  !important;
+}
+
+/* hide index page arrow icons (used in default theme) */
+.arrow-right img {
+    display: none;
+}
+
+/* add room for apply button on VPS and VPN pages */
+#wnd_vpnc_cfg .table:last-child,
+#wnd_vpns_cfg .table:last-child {
+    height: 45px;
+}
+
+/* Network traffic page > drop down height */
+select#sel_netif {
+    height: 23px !important;
+    margin-bottom: 10px !important;
+}
+
+/* USB page/VPN Client/Firewall > some elems wider than others */
+table#tbl_vpnc_server select[name=vpnc_sfw],
+table#tbl_smbd select[name=st_samba_mode],
+table#tbl_ftpd select[name=st_ftp_mode] { 
+    width: 220px !important;
+}
+table#tbl_minidlna div.input-append input {
+    width: 175px !important;
+}
+table.table select[name=fw_log_x] {
+    width: auto !important;
+}
+
+/* remove excessive copyright */
+#footer > .copyright,
+#footer > div:last-child {
+    display: none;
+}
