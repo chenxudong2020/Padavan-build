@@ -39,7 +39,8 @@ jobs:
     - name: Initialization Environment # 2.初始环境的设置
       env:
         DEBIAN_FRONTEND: noninteractive  # 非交互模式
-      run: |
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      run: |   
         sudo apt-get update
         sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
         cpio git python-docutils gettext automake autopoint texinfo build-essential help2man \
