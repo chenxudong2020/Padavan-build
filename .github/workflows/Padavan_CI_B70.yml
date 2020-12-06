@@ -29,7 +29,7 @@ env:
   WORK_PATH: /opt/rt-n56u           # 工作目录 一定要加 /
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: true
-  FILE_NAME: ${{T_NAMES}}       
+  FILE_NAME: "B70"       
   IMAGES_PATH: /opt/rt-n56u/images/
 jobs:
   build:
