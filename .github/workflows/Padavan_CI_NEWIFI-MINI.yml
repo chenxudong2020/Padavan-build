@@ -39,6 +39,8 @@ jobs:
     - name: Initialization Environment # 2.初始环境的设置
       env:
         DEBIAN_FRONTEND: noninteractive  # 非交互模式
+        FILE_NAME: ${{T_NAMES}}-${{date "+%Y%m%d"}}       
+        IMAGES_PATH:${{WORK_PATH}}/images/
       run: |
         sudo apt-get update
         sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
@@ -106,13 +108,13 @@ jobs:
         sudo ./build_firmware_modify $t_item          # $t_item  是循环的子对象
         sudo mv -f images/*.trx ${WORK_PATH}/images/
         done
-        echo "::set-env name=FILE_NAME::$T_NAMES-$(date "+%Y%m%d")"  # 包名
-        echo "::set-env name=IMAGES_PATH::${WORK_PATH}/images/"      # 打包目录
+        # echo "::set-env name=FILE_NAME::$T_NAMES-$(date "+%Y%m%d")"  # 包名
+        # echo "::set-env name=IMAGES_PATH::${WORK_PATH}/images/"      # 打包目录
     - name : Upload Packages           # 6. 打包文件并且上传到当前主分支
       uses: actions/upload-artifact@master
       if: env.UPLOAD_FIRMWARE == 'true' && success()   # 成功才执行
       with:
-        name: Padavan-${{env.FILE_NAME}}
+        name: ${{ env.FILE_NAME }}
         path: ${{ env.IMAGES_PATH }}
     - name: Upload firmware to cowtransfer
       if: env.UPLOAD_COWTRANSFER == 'true' && success()
