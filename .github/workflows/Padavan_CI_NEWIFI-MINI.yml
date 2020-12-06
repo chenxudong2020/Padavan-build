@@ -29,6 +29,8 @@ env:
   WORK_PATH: /opt/rt-n56u           # 工作目录 一定要加 /
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: true
+   FILE_NAME: "NEWIFI-MINI"-${{date "+%Y%m%d"}}       
+   IMAGES_PATH: /opt/rt-n56u/images/
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -39,8 +41,7 @@ jobs:
     - name: Initialization Environment # 2.初始环境的设置
       env:
         DEBIAN_FRONTEND: noninteractive  # 非交互模式
-        FILE_NAME: ${{T_NAMES}}-${{date "+%Y%m%d"}}       
-        IMAGES_PATH: ${{WORK_PATH}}/images/
+       
       run: |
         sudo apt-get update
         sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
