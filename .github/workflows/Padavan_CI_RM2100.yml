@@ -29,6 +29,8 @@ env:
   WORK_PATH: /opt/rt-n56u           # 工作目录 一定要加 /
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: true
+  FILE_NAME: "RM2100"-${{date "+%Y%m%d"}}       
+  IMAGES_PATH: /opt/rt-n56u/images/    
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -106,8 +108,8 @@ jobs:
         sudo ./build_firmware_modify $t_item          # $t_item  是循环的子对象
         sudo mv -f images/*.trx ${WORK_PATH}/images/
         done
-        echo "::set-env name=FILE_NAME::$T_NAMES-$(date "+%Y%m%d")"  # 包名
-        echo "::set-env name=IMAGES_PATH::${WORK_PATH}/images/"      # 打包目录
+        # echo "::set-env name=FILE_NAME::$T_NAMES-$(date "+%Y%m%d")"  # 包名
+        # echo "::set-env name=IMAGES_PATH::${WORK_PATH}/images/"      # 打包目录
     - name : Upload Packages           # 6. 打包文件并且上传到当前主分支
       uses: actions/upload-artifact@master
       if: env.UPLOAD_FIRMWARE == 'true' && success()   # 成功才执行

@@ -29,6 +29,8 @@ env:
   WORK_PATH: /opt/rt-n56u           # 工作目录 一定要加 /
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: true
+  FILE_NAME: "B70"-${{date "+%Y%m%d"}}       
+  IMAGES_PATH: /opt/rt-n56u/images/
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -106,7 +108,24 @@ jobs:
         sudo ./build_firmware_modify $t_item          # $t_item  是循环的子对象
         sudo mv -f images/*.trx ${WORK_PATH}/images/
         done
-        echo "::set-env name=FILE_NAME::$T_NAMES-$(date "+%Y%m%d")"  # 包名
-        echo "::set-env name=IMAGES_PATH::${WORK_PATH}/images/"      # 打包目录
-  
+        # echo "::set-env name=FILE_NAME::$T_NAMES-$(date "+%Y%m%d")"  # 包名
+        # echo "::set-env name=IMAGES_PATH::${WORK_PATH}/images/"      # 打包目录
+    - name : Upload Packages           # 6. 打包文件并且上传到当前主分支
+      uses: actions/upload-artifact@master
+      if: env.UPLOAD_FIRMWARE == 'true' && success()   # 成功才执行
+      with:
+        name: Padavan-${{env.FILE_NAME}}
+        path: ${{ env.IMAGES_PATH }}
+    - name: Upload firmware to cowtransfer
+      if: env.UPLOAD_COWTRANSFER == 'true' && success()
+      run: |
+        curl -fsSL git.io/file-transfer | sh
+        ./transfer cow --block 2621440 -s -p 64 --no-progress ${IMAGES_PATH} 2>&1 | tee cowtransfer.log
+        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
+    - name: Upload firmware to WeTransfer
+      if: env.UPLOAD_WETRANSFER == 'true' && success()
+      run: |
+        curl -fsSL git.io/file-transfer | sh
+        ./transfer wet -s -p 16 --no-progress ${IMAGES_PATH} 2>&1 | tee wetransfer.log
+        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"  
 
