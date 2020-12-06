@@ -40,7 +40,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive  # 非交互模式
         FILE_NAME: ${{T_NAMES}}-${{date "+%Y%m%d"}}       
-        IMAGES_PATH:${{WORK_PATH}}/images/
+        IMAGES_PATH: ${{WORK_PATH}}/images/
       run: |
         sudo apt-get update
         sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
