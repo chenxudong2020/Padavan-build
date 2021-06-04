@@ -46,9 +46,6 @@ jobs:
         sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
         cpio git python-docutils gettext automake autopoint texinfo build-essential help2man \
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
-        sudo apt-get install ruby
-        sudo apt-get install zlib1g
-        sudo apt-get install zlib1g.dev
         sudo timedatectl set-timezone 'Asia/Shanghai'  # 设置时区
     - name: Clone Code                 # 3.拷贝代码
       run: |
