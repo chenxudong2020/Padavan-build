@@ -6,11 +6,9 @@ name: Padavan CI K2P
 on: 
   release:
     types: [published]
-
   push:
     branches: 
       - master
-
   schedule:
     - cron: 0 19 * * *
   
@@ -56,7 +54,6 @@ jobs:
       run: |
         cd $WORK_PATH/toolchain-mipsel
         sh dl_toolchain.sh
-
         # mkdir -p toolchain-3.4.x
         # wget https://github.com/hanwckf/padavan-toolchain/releases/download/v1.1/mipsel-linux-uclibc.tar.xz
         # tar -xvf mipsel-linux-uclibc.tar.xz -C toolchain-3.4.x
@@ -106,6 +103,33 @@ jobs:
           sudo $WORK_PATH/$t_item.sh
         fi
         # 4. 清理构建
+          cp -f configs/templates/$t_item.config .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_CURL/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_GDUT_DRCOM/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_DOGCOM/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_MINIEAP/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_NAPT66/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_DUMP1090/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_RTL_SDR/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_MENTOHUST/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_WIREGUARD/d' .config
         sudo ./clear_tree  
         sudo ./build_firmware_modify $t_item          # $t_item  是循环的子对象
         sudo mv -f images/*.trx ${WORK_PATH}/images/
@@ -130,4 +154,3 @@ jobs:
         curl -fsSL git.io/file-transfer | sh
         ./transfer wet -s -p 16 --no-progress ${IMAGES_PATH} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
-
