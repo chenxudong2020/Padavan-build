@@ -24,10 +24,10 @@ env:
   PUBLIC_SH: public.sh              # 公共命令
   THEME_PATH: theme
   UPLOAD_FIRMWARE: true             # 是否打包文件
-  CLONE_URL: https://github.com/chongshengB/rt-n56u.git    # padavan  地址
+  CLONE_URL: https://github.com/padavanonly/rt-n56u.git    # padavan  地址
   CLONE_BRANCH: master              # padavan 分支
   WORK_PATH: /opt/rt-n56u           # 工作目录 一定要加 /
-  UPLOAD_COWTRANSFER: true
+  UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: true
   FILE_NAME: "JDC-1"      
   IMAGES_PATH: /opt/rt-n56u/images/  

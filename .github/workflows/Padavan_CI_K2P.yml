@@ -25,7 +25,7 @@ env:
   CLONE_URL: https://github.com/immortalwrt/padavan.git    # padavan 支持KVR源码地址
   CLONE_BRANCH: master              # padavan 分支
   WORK_PATH: /opt/rt-n56u           # 工作目录 一定要加 /
-  UPLOAD_COWTRANSFER: true
+  UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: true
   FILE_NAME: "K2P"       
   IMAGES_PATH: /opt/rt-n56u/images/  
