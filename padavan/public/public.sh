@@ -23,7 +23,8 @@ default_theme_path="${DESTDIR}/trunk/user/www/n56u_ribbon_fixed"
 	cp -rf ../public/theme/. $default_theme_path
 	echo "--------------复制主题文件结束------------------"
  
- 
+		sed -i 's/{ "wl_auth_mode", "psk" },/{ "wl_auth_mode", "open" },/g' /opt/rt-n56u/trunk/user/shared/defaults.c
+        sed -i 's/{ "rt_auth_mode", "psk" },/{ "rt_auth_mode", "open" },/g' /opt/rt-n56u/trunk/user/shared/defaults.c
 
 #   echo "--------------开始复制中文SSID支持文件----------"
  # trunk/user/httpd/aspbw.c
