@@ -17,8 +17,7 @@ DESTDIR=/opt/rt-n56u
  
 
 
-        sed -i 's/{ "wl_auth_mode", "psk" },/{ "wl_auth_mode", "open" },/g' /opt/rt-n56u/trunk/user/shared/defaults.c
-        sed -i 's/{ "rt_auth_mode", "psk" },/{ "rt_auth_mode", "open" },/g' /opt/rt-n56u/trunk/user/shared/defaults.c
+
         sed -i 's/my.router/p.to/g' /opt/rt-n56u/trunk/user/rc/net_wan.c  
 	
 	
