@@ -24,11 +24,11 @@ env:
   UPLOAD_FIRMWARE: true             # 是否打包文件
   CLONE_URL: https://github.com/tsl0922/padavan.git    # padavan 支持KVR源码地址
   CLONE_BRANCH: main              # padavan 分支
-  WORK_PATH: /opt/rt-n56u           # 工作目录 一定要加 /
+  WORK_PATH: /opt/padavan          # 工作目录 一定要加 /
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: true
   FILE_NAME: "K2P-NANO"
-  IMAGES_PATH: /opt/rt-n56u/images/  
+  IMAGES_PATH: /opt/padavan/images/
    
 jobs:
   build:
