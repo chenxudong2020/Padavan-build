@@ -42,7 +42,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive  # 非交互模式
         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       run: |   
-        sudo apt-get update
+        sudo apt update
         # Debian/Ubuntu
         sudo apt install -y unzip libtool-bin ccache curl cmake gperf gawk flex bison nano xxd \
         fakeroot kmod cpio git python3-docutils gettext automake autopoint \
@@ -54,8 +54,6 @@ jobs:
         git clone --depth=1 $CLONE_URL -b $CLONE_BRANCH $WORK_PATH
     - name: Build Tool Chain           # 4.构建工具链
       run: |
-        # cd $WORK_PATH
-        # sudo make $T_NAMES
         mkdir -p ${WORK_PATH}/images/
     - name: Clear And Build            # 5.清理构建树并开始构建
       run: |
@@ -101,44 +99,12 @@ jobs:
           echo "执行自定义 ${t_item} sh"
           sudo $WORK_PATH/$t_item.sh
         fi
-        # 4. 清理构建
-          cp -f configs/templates/$t_item.config .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_CURL/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_GDUT_DRCOM/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_DOGCOM/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_MINIEAP/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_NAPT66/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_DUMP1090/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_RTL_SDR/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_MENTOHUST/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_WIREGUARD/d' .config
           sed -i 's/{ "wl_auth_mode", "psk" },/{ "wl_auth_mode", "open" },/g' $WORK_PATH/trunk/user/shared/defaults.c
           sed -i 's/{ "rt_auth_mode", "psk" },/{ "rt_auth_mode", "open" },/g' $WORK_PATH/trunk/user/shared/defaults.c
-
-        # sudo make clean
         cd $WORK_PATH/
         sudo make $t_item          # $t_item  是循环的子对象
         sudo mv -f images/*.trx ${WORK_PATH}/images/
         done
-        # echo "::set-env name=FILE_NAME::$T_NAMES-$(date "+%Y%m%d")"  # 包名
-        # echo "::set-env name=IMAGES_PATH::${WORK_PATH}/images/"      # 打包目录
     - name : Upload Packages           # 6. 打包文件并且上传到当前主分支
       uses: actions/upload-artifact@master
       if: env.UPLOAD_FIRMWARE == 'true' && success()   # 成功才执行
