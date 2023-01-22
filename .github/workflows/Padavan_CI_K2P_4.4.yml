@@ -44,7 +44,7 @@ jobs:
       run: |   
         sudo apt-get update
         # Debian/Ubuntu
-        sudo apt install unzip libtool-bin ccache curl cmake gperf gawk flex bison nano xxd \
+        sudo apt install -y unzip libtool-bin ccache curl cmake gperf gawk flex bison nano xxd \
         fakeroot kmod cpio git python3-docutils gettext automake autopoint \
         texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
         libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
