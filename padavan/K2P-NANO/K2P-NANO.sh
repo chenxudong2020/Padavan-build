@@ -18,7 +18,7 @@ DESTDIR=/opt/rt-n56u
 
 
 
-        sed -i 's/my.router/p.to/g' /opt/rt-n56u/trunk/user/rc/net_wan.c  
+        sed -i 's/my.router/p.to/g' /opt/padavan/trunk/user/rc/net_wan.c
 	
 	
 	
