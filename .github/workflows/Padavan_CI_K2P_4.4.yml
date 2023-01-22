@@ -93,14 +93,15 @@ jobs:
         for t_item in $T_NAMES;
         do
         cp -f $WORK_PATH/trunk/configs/templates/$t_item.config .config  # 拷贝模板到 .config
-        echo "执行 ${PUBLIC_SH} sh"
-        sudo $WORK_PATH/$PUBLIC_PATH/$PUBLIC_SH
+        # echo "执行 ${PUBLIC_SH} sh"
+        # sudo $WORK_PATH/$PUBLIC_PATH/$PUBLIC_SH
         if [ -e $WORK_PATH/$t_item.sh ] ; then
           echo "执行自定义 ${t_item} sh"
           sudo $WORK_PATH/$t_item.sh
         fi
           sed -i 's/{ "wl_auth_mode", "psk" },/{ "wl_auth_mode", "open" },/g' $WORK_PATH/trunk/user/shared/defaults.c
           sed -i 's/{ "rt_auth_mode", "psk" },/{ "rt_auth_mode", "open" },/g' $WORK_PATH/trunk/user/shared/defaults.c
+        echo "开始构建---------------------"
         cd $WORK_PATH/
         sudo make $t_item          # $t_item  是循环的子对象
         sudo mv -f images/*.trx ${WORK_PATH}/images/
