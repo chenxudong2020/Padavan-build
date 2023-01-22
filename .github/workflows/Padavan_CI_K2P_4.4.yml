@@ -1,8 +1,8 @@
 # # # # # # # # # # #
-#  自动构建K2P 
+#  自动构建K2P_4.4
 #      
 # # # # # # # # # # #
-name: Padavan CI K2P
+name: Padavan CI K2P_4.4
 on: 
   release:
     types: [published]
