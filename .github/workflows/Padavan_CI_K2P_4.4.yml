@@ -102,8 +102,8 @@ jobs:
           sed -i 's/{ "wl_auth_mode", "psk" },/{ "wl_auth_mode", "open" },/g' $WORK_PATH/trunk/user/shared/defaults.c
           sed -i 's/{ "rt_auth_mode", "psk" },/{ "rt_auth_mode", "open" },/g' $WORK_PATH/trunk/user/shared/defaults.c
         echo "开始构建---------------------"
-        cd $WORK_PATH/
-        sudo make $t_item          # $t_item  是循环的子对象
+        cd $WORK_PATH/trunk
+        fakeroot ./build_firmware_modify $t_item          # $t_item  是循环的子对象
         sudo mv -f images/*.trx ${WORK_PATH}/images/
         done
     - name : Upload Packages           # 6. 打包文件并且上传到当前主分支
