@@ -3,16 +3,15 @@
 #      
 # # # # # # # # # # #
 name: Padavan CI PSG1218
-on: 
-  release:
-    types: [published]
-
-  push:
-    branches: 
-      - master
-
+on:
   schedule:
-    - cron: 0 19 * * *
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      clean_cache:
+        description: 'Clear caches'
+        required: false
+        type: boolean
   
   watch:
     types: [started]
